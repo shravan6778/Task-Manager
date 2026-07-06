@@ -11,3 +11,12 @@ class Task:
     
     def mark_complete(self):
         self.is_completed = True
+        
+    def to_dict(self) -> dict:
+        return {
+            "id": self.id,
+            "title": self.title,
+            "description": self.description,
+            "is_completed": self.is_completed,
+            "created_at": self.created_at
+        }
