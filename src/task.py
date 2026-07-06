@@ -20,3 +20,11 @@ class Task:
             "is_completed": self.is_completed,
             "created_at": self.created_at
         }
+    
+    @classmethod
+    def from_dict(cls, data: dict):
+        task=cls(data["id"], data["title"], data["description"])
+        task.is_completed=True
+        task.created_at=data["created_at"]
+        return task
+    
