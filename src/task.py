@@ -9,4 +9,5 @@ class Task:
         self.created_at = datetime.now().strftime("%Y-%m-%d %H:%M")
         
     
-    
+    def mark_complete(self):
+        self.is_completed = True
