@@ -23,3 +23,10 @@ class TaskManager:
     def save_tasks(self):
         with open(self.storage_file, 'w') as f:
             json.dump([t.to_dict() for t in self.tasks], f, indent=4)
+            
+    def add_task(self, title: str, description: str = ""):
+        next_id = max([t.id for t in self.tasks], default=0) + 1
+        new_task = Task(next_id, title, description)
+        self.tasks.append(new_task)
+        self.save_tasks()
+        print(f"Task '{title}' added successfully (ID: {next_id}).")
