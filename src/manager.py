@@ -39,3 +39,16 @@ class TaskManager:
                 print(f"Task {task_id} marked as complete!")
                 return
         print(f"Error: Task with ID {task_id} not found.")
+        
+    def list_tasks(self):
+        if not self.tasks:
+            print("\nYour task list is completely empty!")
+            return
+
+        table_data = []
+        for t in self.tasks:
+            status = "Done" if t.is_completed else "Pending"
+            table_data.append([t.id, t.title, t.description, status, t.created_at])
+
+        headers = ["ID", "Title", "Description", "Status", "Created At"]
+        print("\n" + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
