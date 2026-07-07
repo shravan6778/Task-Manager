@@ -30,3 +30,12 @@ class TaskManager:
         self.tasks.append(new_task)
         self.save_tasks()
         print(f"Task '{title}' added successfully (ID: {next_id}).")
+        
+    def complete_task(self, task_id: int):
+        for task in self.tasks:
+            if task.id == task_id:
+                task.mark_complete()
+                self.save_tasks()
+                print(f"Task {task_id} marked as complete!")
+                return
+        print(f"Error: Task with ID {task_id} not found.")
