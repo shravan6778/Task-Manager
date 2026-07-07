@@ -7,4 +7,15 @@ from src.task import Task
 class TaskManager:
     def __init__(self, storage_file: str = 'tasks.json'):
         self.storage_file=storage_file
-    
+        self.tasks: List[Task] = self._load_tasks()
+
+    def _load_tasks(self) -> List[Task]:
+        if not os.path.exists(self.storage_file):
+            return []
+        else:
+            try:
+                with open(self.storage_file, 'r') as f:
+                    data=json.load(f)
+                    return [Task.from_dict(t) for t in data]
+            except json.JSONDecodeError:
+                return []
