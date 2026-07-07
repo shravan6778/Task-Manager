@@ -19,3 +19,7 @@ class TaskManager:
                     return [Task.from_dict(t) for t in data]
             except json.JSONDecodeError:
                 return []
+            
+    def save_tasks(self):
+        with open(self.storage_file, 'w') as f:
+            json.dump([t.to_dict() for t in self.tasks], f, indent=4)
