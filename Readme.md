@@ -28,8 +28,10 @@ task_manager/
 ├── main.py              # Application entry point & user interface loop
 ├── requirements.txt     # Tracked external dependencies
 └── tasks.json           # Local auto-generated database file
+```
 
-🧠 Core Python Foundations Demonstrated
+## 🧠 Core Python Foundations Demonstrated
+
 This codebase was designed to highlight essential computer science and Python specific standards:
 
 Object-Oriented Programming (OOP): Deep usage of encapsulation, class states, object instantiation, and alternative factory methods (@classmethod).
@@ -40,34 +42,45 @@ Defensive Error Handling: Implements precise try/except blocks to isolate user t
 
 Strict Type Hinting: Utilizes Python's native typing module (List, primitive markers) to achieve self-documenting code and support IDE static analysis tools.
 
-🛠️ Installation & Setup
+## 🛠️ Installation & Setup
+
 Clone the repository:
 
-Bash
-git clone [https://github.com/shravan6778/Task-Manager.git](https://github.com/shravan6778/Task-Manager.git)
+```bash
+git clone https://github.com/shravan6778/Task-Manager.git
 cd py-task-manager
-(Optional) Create and activate a virtual environment:
+```
 
-Bash
+Optional: create and activate a virtual environment:
+
+```bash
 python -m venv venv
 # On Windows:
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
+```
+
 Install the required packages:
 
-Bash
+```bash
 pip install -r requirements.txt
-💻 How To Run
+```
+
+## 💻 How To Run
+
 Execute the entry file from the root directory:
 
-Bash
+```bash
 python main.py
-⚙️ Usage Example
+```
+
+## ⚙️ Usage Example
+
 Upon running the script, you will be prompted with an interactive menu:
 ![PyTaskManager CLI Output Screenshot](./assets/output-1.png)
 ![PyTaskManager CLI Output Screenshot](./assets/output-2.png)
 
-📄 License
+## 📄 License
+
 This project is open-source and available under the MIT License.
-```
