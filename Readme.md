@@ -17,7 +17,9 @@ The workspace is organized using a professional package directory structure sepa
 
 ```text
 task_manager/
-│
+├── assets/
+│   ├── output-1.png
+│   └── output-2.png
 ├── src/
 │   ├── __init__.py      # Marks the directory as an importable package
 │   ├── task.py          # Task data model and object state management
